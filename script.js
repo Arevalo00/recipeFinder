@@ -1,58 +1,12 @@
 
-var search = document.getElementById("search-input")
-var requestUrl = ""
-var rewind = "return"
+var search = document.getElementById("search-input");
+var edamamRequestUrl = "https://api.edamam.com/api/recipes/v2?type=public&q=chicken&app_id=f18a3a55&app_key=8bb356bbf9943a27d2c2f82ce7546805";
+var rewind = "return";
 var input = document.getElementById("saveServer");
-
 
 localStorage.setItem("server", input.val());
 
-
-function getResults (){
-   console.log ("search-input")
-}
-
-
-
-//adds event listener for API fetch request
-function getResults(){
- search.addEventListner("click",function() {
-    if (search ==="") {
-        fetch(requestUrl)
-        .then(function(response){
-           return response.json();
-            })
-           .then(function (data){
-               console.log(data);
-           
-       });
-
-   }
-});
-}
-
-var requestUrl = "https://api.edamam.com/api/recipes/v2?type=public&q=chicken&app_id=f18a3a55&app_key=8bb356bbf9943a27d2c2f82ce7546805"
-fetch(requestUrl)
-.then(function(response){
-   return response.json();
-})
-.then(function (data){
-   console.log(data);
-});
-
-//adds return to index.html for find
-
-   find.addEventListner('click', gohome()) {
-function gohome(){
-
-}
-   
-   }
-   
-   
-   
-   
-    const url = 'https://wordsapiv1.p.rapidapi.com/words/hatchback/typeOf';
+const url = 'https://wordsapiv1.p.rapidapi.com/words/hatchback/typeOf';
 const options = {
 	method: 'GET',
 	headers: {
@@ -61,13 +15,16 @@ const options = {
 	}
 };
 
-// try {
-// 	const response =  fetch(url, options);
-// 	const result =  response.text();
-// 	console.log(result);
-// } catch (error) {
-// 	console.error(error);
-// }
+// fetch request for edamam api
+fetch(edamamRequestUrl)
+.then(function(response){
+   return response.json();
+})
+.then(function (data){
+   console.log(data);
+});
+
+// fetch request for words api
 fetch(url, options)
 .then(function(response){
    return response.text();
@@ -76,3 +33,10 @@ fetch(url, options)
    console.log(data);
 
 })
+
+//adds return to index.html for find
+find.addEventListner('click', gohome);
+
+function gohome(){
+
+}
