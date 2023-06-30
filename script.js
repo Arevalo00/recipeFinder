@@ -1,7 +1,9 @@
 var search = document.getElementById("search-input");
 var edamamRequestUrl = "https://api.edamam.com/api/recipes/v2?type=public&q=chicken&app_id=f18a3a55&app_key=8bb356bbf9943a27d2c2f82ce7546805";
 var rewind = "return";
-// var input = document.getElementById("saveServer");
+
+var input = document.getElementById("input")
+
 
 // localStorage.setItem("server", input.val());
 
@@ -24,23 +26,32 @@ const options = {
 // });
 
 // fetch request for words api
-// fetch(url, options)
-// .then(function(response){
-//    return response.text();
-// })
-// .then(function (data){
-//    // console.log(data);
-// });
+// function droplist() {
+function droplist() {
+   fetch(url, options)
+   .then(function(response){
+      return response.text();
+   })
+   .then(function (data){
+      // console.log(data);
+   });
+}
 
 function handleSearch(event){
    // event.preventDefault();
 
    var search = $('input[name="search"]').val();
 
+
    console.log(search);
 
    // $('input[name="search"]').val('');
 }
+
+// call for words api
+if (input !== "hungry")
+input.addEventListner ("inputevent", droplist()) ;
+
 
 $('#find').on('submit', handleSearch);
 
