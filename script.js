@@ -17,25 +17,25 @@ const options = {
 };
 
 // fetch request for edamam api
-fetch(edamamRequestUrl)
-.then(function(response){
-   return response.json();
-})
-.then(function (data){
-   // console.log(data);
-});
+// fetch(edamamRequestUrl)
+// .then(function(response){
+//    return response.json();
+// })
+// .then(function (data){
+//    // console.log(data);
+// });
 
 // fetch request for words api
+// function droplist() {
 function droplist() {
- 
-	fetch(url, options)
-.then(function(response){
-   return response.text();
-})
-.then(function (data){
-   // console.log(data);
-});
-
+   fetch(url, options)
+   .then(function(response){
+      return response.text();
+   })
+   .then(function (data){
+      // console.log(data);
+   });
+}
 
 function handleSearch(event){
    // event.preventDefault();
@@ -45,13 +45,16 @@ function handleSearch(event){
 
    console.log(search);
 
-   $('input[name="search"]').val('');
+   // $('input[name="search"]').val('');
 }
 
 // call for words api
-if (input !== "hungry")
-input.addEventListner ("inputevent", droplist()) ;
+// if (input !== "hungry")
+// input.addEventListner ("inputevent", droplist());
 
 
 $('#find').on('submit', handleSearch);
 
+$('#something').on('click', function(){
+   console.log(search);
+});
