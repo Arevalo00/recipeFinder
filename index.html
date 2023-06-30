@@ -10,6 +10,7 @@
 
 <body>
     <main>
+
         <h1 class="bg-amber-200 flex justify-center pb-20 pt-20 text-gray-50 text-6xl font-semibold">Recipe Finder</h1>
         <div class="bg-amber-200 object-center flex justify-center ...">
             <div #="input" class=" rounded px-3.5 object-center outline-gray-300"><input class="rounded px-3.5 object-center border-neutral-600 outline-1"type="text" placeholder="Search"></div>
@@ -17,9 +18,20 @@
           </div>
          <div class="bg-amber-200 pb-20 pt-10"></div>
 
-          
-        
+
+        <form action="./results.html" id="find">
+            <input type="text" name="search" placeholder="Search">
+            <button type="submit">Find</button>
+        </form>
+         
     </main>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+      integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
+      crossorigin="anonymous"
+    ></script>
     <script src="./script.js"></script>
 </body>
 </html>
