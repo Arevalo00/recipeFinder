@@ -32,8 +32,14 @@ fetch(url, options)
    // console.log(data);
 });
 
-// Takes user to results page
-$('#find').on('click', function(){
-   console.log('success');
-   document.location.replace('./results.html');
-});
+function handleSearch(event){
+   // event.preventDefault();
+
+   var search = $('input[name="search"]').val();
+
+   console.log(search);
+
+   $('input[name="search"]').val('');
+}
+
+$('#find').on('submit', handleSearch);
