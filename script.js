@@ -28,7 +28,6 @@ const options = {
 
 
 // fetch request for words api
-// function droplist() {
 function droplist() {
 
  
@@ -42,25 +41,27 @@ function droplist() {
 
 }
 
-function handleSearch(event){
-   // event.preventDefault();
-
-   var search = $('input[name="search"]').val();
-
-
-   console.log(search);
-
-   // $('input[name="search"]').val('');
-}
-
 // call for words api
 
 //if (input !== "hungry")
 //input.addEventListner ("inputevent", droplist()) ;
 
+$(function(){
+   function handleSearch(event){
+      // event.preventDefault();
+   
+      var search = $('#input').val();
+      location = './results.html'
+   
+      console.log(search);
+   
+      // $('input[name="search"]').val('');
+   }
 
-$('#find').on('submit', handleSearch);
+   $('#find').on('submit', handleSearch);
+   $('#something').on('click', function(){
+      console.log(location.search);
+      console.log(search)
+   });
 
-$('#something').on('click', function(){
-   console.log(search);
 });
