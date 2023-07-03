@@ -5,7 +5,7 @@ var rewind = "return";
 var input = document.getElementById("input")
 
 
-// localStorage.setItem("server", input.val());
+ localStorage.setItem("server", input.val());
 
 const url = 'https://wordsapiv1.p.rapidapi.com/words/hatchback/typeOf';
 const options = {
@@ -16,17 +16,16 @@ const options = {
 	}
 };
 
-// fetch request for edamam api
-// fetch(edamamRequestUrl)
-// .then(function(response){
-//    return response.json();
-// })
-// .then(function (data){
-//    // console.log(data);
-// });
+ //fetch request for edamam api
+ fetch(edamamRequestUrl)
+ .then(function(response){
+    return response.json();
+ })
+ .then(function (data){
+     console.log(data);
+ });
 
-// fetch request for words api
-// function droplist() {
+ //fetch request for words api
 function droplist() {
    fetch(url, options)
    .then(function(response){
@@ -38,7 +37,7 @@ function droplist() {
 }
 
 function handleSearch(event){
-   // event.preventDefault();
+    event.preventDefault();
 
    var search = $('input[name="search"]').val();
 
