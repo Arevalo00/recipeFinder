@@ -17,13 +17,13 @@ const options = {
 };
 
 // fetch request for edamam api
-fetch(edamamRequestUrl)
-.then(function(response){
-   return response.json();
-})
-.then(function (data){
+//fetch(edamamRequestUrl)
+//.then(function(response){
+  // return response.json();
+//})
+//.then(function (data){
    // console.log(data);
-});
+//});
 
 // fetch request for words api
 function droplist() {
@@ -35,7 +35,7 @@ function droplist() {
 .then(function (data){
    // console.log(data);
 });
-
+}
 
 function handleSearch(event){
    // event.preventDefault();
@@ -49,8 +49,8 @@ function handleSearch(event){
 }
 
 // call for words api
-if (input !== "hungry")
-input.addEventListner ("inputevent", droplist()) ;
+//if (input !== "hungry")
+//input.addEventListner ("inputevent", droplist()) ;
 
 
 $('#find').on('submit', handleSearch);
