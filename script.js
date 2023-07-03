@@ -47,21 +47,9 @@ function droplist() {
 //input.addEventListner ("inputevent", droplist()) ;
 
 $(function(){
-   function handleSearch(event){
-      // event.preventDefault();
-   
-      var search = $('#input').val();
-      location = './results.html'
-   
-      console.log(search);
-   
-      // $('input[name="search"]').val('');
-   }
+   console.log(location.search);
+   search = location.search.slice(8, location.search.length);
+   console.log(search);
 
-   $('#find').on('submit', handleSearch);
-   $('#something').on('click', function(){
-      console.log(location.search);
-      console.log(search)
-   });
 
 });
