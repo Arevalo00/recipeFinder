@@ -7,7 +7,7 @@ var input = document.getElementById("input")
 
 // localStorage.setItem("server", input.val());
 
-const url = 'https://wordsapiv1.p.rapidapi.com/words/hatchback/typeOf';
+const url = 'https://wordsapiv1.p.rapidapi.com/words/food/hasTypes';
 const options = {
 	method: 'GET',
 	headers: {
@@ -28,28 +28,38 @@ const options = {
 
 
 // fetch request for words api
-function droplist() {
+function callWordsApi() {
 
- 
 	fetch(url, options)
-.then(function(response){
-   return response.text();
-})
-.then(function (data){
-   // console.log(data);
-});
+   .then(function(response){
+      return response.json();
+   })
+   .then(function (data){
+      $('#search').autocomplete({
+         source: data.hasTypes,
+       });
 
+   });
 }
 
-// call for words api
-
-//if (input !== "hungry")
-//input.addEventListner ("inputevent", droplist()) ;
 
 $(function(){
-   console.log(location.search);
    search = location.search.slice(8, location.search.length);
-   console.log(search);
 
+   // fetch request for words api
+   function callWordsApi() {
+
+      fetch(url, options)
+      .then(function(response){
+         return response.json();
+      })
+      .then(function (data){
+         $('#search').autocomplete({
+            source: data.hasTypes,
+         });
+      });
+   }
+
+   callWordsApi();
 
 });
