@@ -18,7 +18,6 @@ var input = document.getElementById("input")
 // };
 
 // fetch request for edamam api
-
 fetch(edamamRequestUrl)
 .then(function(response) {
   return response.json();
@@ -59,42 +58,13 @@ fetch(edamamRequestUrl)
 });
 
 
-// fetch request for words api
-// function droplist() {
 
- 
-// 	fetch(url, options)
-// .then(function(response){
-//    return response.text();
-// })
-// .then(function (data){
-//    // console.log(data);
-// });
+}
 
-// }
+$(function(){
+   console.log(location.search);
+   search = location.search.slice(8, location.search.length);
+   console.log(search);
 
-// call for words api
 
-// if (input !== "hungry")
-// //input.addEventListner ("inputevent", droplist()) ;
-
-// $(function(){
-//    function handleSearch(event){
-//       // event.preventDefault();
-   
-//       var search = $('#input').val();
-//       location = './results.html'
-   
-//       console.log(search);
-   
-//       // $('input[name="search"]').val('');
-//    }
-
-//    $('#find').on('submit', handleSearch);
-//    $('#something').on('click', function(){
-//       console.log(location.search);
-//       console.log(search)
-//    });
-
-// });
-
+});
