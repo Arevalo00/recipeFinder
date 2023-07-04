@@ -16,32 +16,6 @@ const options = {
 	}
 };
 
-// fetch request for edamam api
-
-// fetch(edamamRequestUrl)
-// .then(function(response){
-//    return response.json();
-// })
-// .then(function (data){
-//    // console.log(data);
-// });
-
-
-// fetch request for words api
-function callWordsApi() {
-
-	fetch(url, options)
-   .then(function(response){
-      return response.json();
-   })
-   .then(function (data){
-      $('#search').autocomplete({
-         source: data.hasTypes,
-       });
-
-   });
-}
-
 
 $(function(){
    search = location.search.slice(8, location.search.length);
