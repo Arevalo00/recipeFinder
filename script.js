@@ -58,9 +58,6 @@ fetch(edamamRequestUrl)
 });
 
 
-
-
-
 $(function(){
    search = location.search.slice(8, location.search.length);
    // fetch request for words api
@@ -79,4 +76,4 @@ $(function(){
 
    callWordsApi();
 
-});
+})
