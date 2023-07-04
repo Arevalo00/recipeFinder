@@ -1,6 +1,7 @@
-var search = document.getElementById("search-input");
+var searchInput = document.getElementById("search").value;
 var edamamRequestUrl = "https://api.edamam.com/api/recipes/v2?type=public&q=chicken&app_id=f18a3a55&app_key=8bb356bbf9943a27d2c2f82ce7546805";
 var rewind = "return";
+document.getElementById("search-btn").addEventListener("click", function() {
 
 var input = document.getElementById("input")
 
@@ -16,10 +17,52 @@ const options = {
 	}
 };
 
+// fetch request for edamam api
+fetch(edamamRequestUrl)
+.then(function(response) {
+  return response.json();
+})
+.then(function(data) {
+  console.log("API Response:", data); // Display the raw response for debugging purposes
+
+  var resultsContainer = document.getElementById("results-container");
+  resultsContainer.innerHTML = "";
+
+  if (data.hits && data.hits.length > 0) {
+    data.hits.forEach(function(hit) {
+      var recipeElement = document.createElement("div");
+      recipeElement.classList.add("recipe");
+
+      var labelElement = document.createElement("h3");
+      labelElement.textContent = hit.recipe.label;
+
+      var urlElement = document.createElement("a");
+      urlElement.href = hit.recipe.url;
+      urlElement.textContent = "View Recipe";
+
+      var imageElement = document.createElement("img");
+      imageElement.src = hit.recipe.image;
+
+      recipeElement.appendChild(labelElement);
+      recipeElement.appendChild(urlElement);
+      recipeElement.appendChild(imageElement);
+      resultsContainer.appendChild(recipeElement);
+    });
+  } else {
+    resultsContainer.textContent = "No recipes found.";
+  }
+})
+.catch(function(error) {
+  console.error("Error:", error);
+});
+});
+
+
+
+
 
 $(function(){
    search = location.search.slice(8, location.search.length);
-
    // fetch request for words api
    function callWordsApi() {
 
