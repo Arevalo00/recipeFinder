@@ -8,15 +8,6 @@ var input = document.getElementById("input")
 
 // localStorage.setItem("server", input.val());
 
-const url = 'https://wordsapiv1.p.rapidapi.com/words/food/hasTypes';
-const options = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': '1bb9f313ecmsh60acf53117ec160p1c39c0jsn61cd502107e3',
-		'X-RapidAPI-Host': 'wordsapiv1.p.rapidapi.com'
-	}
-};
-
 // fetch request for edamam api
 fetch(edamamRequestUrl)
 .then(function(response) {
@@ -60,10 +51,20 @@ fetch(edamamRequestUrl)
 
 $(function(){
    search = location.search.slice(8, location.search.length);
+   
+   const wordsRequestUrl = 'https://wordsapiv1.p.rapidapi.com/words/food/hasTypes';
+   const options = {
+      method: 'GET',
+      headers: {
+         'X-RapidAPI-Key': '1bb9f313ecmsh60acf53117ec160p1c39c0jsn61cd502107e3',
+         'X-RapidAPI-Host': 'wordsapiv1.p.rapidapi.com'
+      }
+   };
+
    // fetch request for words api
    function callWordsApi() {
 
-      fetch(url, options)
+      fetch(wordsRequestUrl, options)
       .then(function(response){
          return response.json();
       })
