@@ -35,10 +35,10 @@ function droplist() {
 .then(function (data){
    // console.log(data);
 });
-
+}
 
 function handleSearch(event){
-   // event.preventDefault();
+    //event.preventDefault();
 
    var search = $('input[name="search"]').val();
 
@@ -49,8 +49,8 @@ function handleSearch(event){
 }
 
 // call for words api
-if (input !== "hungry")
-input.addEventListner ("inputevent", droplist()) ;
+// if (input !== "hungry")
+// input.addEventListner ("inputevent", droplist()) ;
 
 
 $('#find').on('submit', handleSearch);
