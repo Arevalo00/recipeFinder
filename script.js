@@ -11,7 +11,7 @@ $(function(){
       }
    };
 
-   // fetch request for words api
+   // Fetch request for words api
    function callWordsApi() {
       fetch(wordsRequestUrl, options)
       .then(function(response){
@@ -27,17 +27,18 @@ $(function(){
    function callEdamamApi(){
       var edamamRequestUrl = 'https://api.edamam.com/api/recipes/v2?type=public&q=' + search + '&app_id=f18a3a55&app_key=8bb356bbf9943a27d2c2f82ce7546805';
 
-      // fetch request for edamam api
+      // Fetch request for edamam api
       fetch(edamamRequestUrl)
       .then(function(response) {
-      return response.json();
+         return response.json();
       })
       .then(function(data) {
       console.log("API Response:", data); // Display the raw response for debugging purposes
 
       var resultsContainer = document.getElementById("results-container");
       resultsContainer.innerHTML = "";
-
+      
+      // Dislpays search results to the page
       if (data.hits && data.hits.length > 0) {
          data.hits.forEach(function(hit) {
             var recipeElement = document.createElement("div");
@@ -67,6 +68,7 @@ $(function(){
       });
    }
 
+   // Displays the results page
    function loadResultsPage(){
       search = $('#search').val();
       console.log('home ' + search);
@@ -89,15 +91,12 @@ $(function(){
 
       $('#find').on('submit', function(event){
          event.preventDefault();
-
          search = $('#search').val();
-         console.log('results ' + search);
-
          callEdamamApi();
       });
    }
 
-   callWordsApi();
+   // callWordsApi();
    $('#homePageFind').on('submit', function(event){
       event.preventDefault();
       loadResultsPage();
