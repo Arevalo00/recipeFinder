@@ -1,9 +1,8 @@
-var searchInput = document.getElementById("search").value;
 var edamamRequestUrl = "https://api.edamam.com/api/recipes/v2?type=public&q=chicken&app_id=f18a3a55&app_key=8bb356bbf9943a27d2c2f82ce7546805";
-var rewind = "return";
 
 $(function(){
-   search = location.search.slice(8, location.search.length);
+   var rootEl = $('#root');
+   var search;
    
    const wordsRequestUrl = 'https://wordsapiv1.p.rapidapi.com/words/food/hasTypes';
    const options = {
@@ -16,19 +15,18 @@ $(function(){
 
    // fetch request for words api
    function callWordsApi() {
-
       fetch(wordsRequestUrl, options)
       .then(function(response){
          return response.json();
       })
       .then(function (data){
          $('#search').autocomplete({
-            source: data.hasTypes,
+            source: data.hasTypes
          });
       });
    }
 
-   function callEdamamApi(search){
+   function callEdamamApi(){
       var edamamRequestUrl = 'https://api.edamam.com/api/recipes/v2?type=public&q=' + search + '&app_id=f18a3a55&app_key=8bb356bbf9943a27d2c2f82ce7546805';
 
       // fetch request for edamam api
@@ -71,26 +69,38 @@ $(function(){
       });
    }
 
-   callWordsApi();
-   $('search-btn').on('click', callEdamamApi(search));
+   function loadResultsPage(){
+      search = $('#search').val();
+      console.log('home ' + search);
 
+      $('#header').remove();
+      $('#homePage').remove();
+      $('#style').remove();
 
+      var resultsPage = $('<nav class="flex justify-center bg-amber-200 pb-10 pt-10" id="resultsPage"></nav>');
+      var form = $('<form class="bg-amber-200 rounded px-3.5" id="find"></form>');
+      form.append($('<input class="rounded px-3.5 border-slate-600 object-center border-neutral-600" id="search" type="text" name="search" placeholder="Search">'));
+      form.append($('<button class="rounded px-3.5 bg-cyan-500 hover:bg-cyan-600" type="submit">Find</button>'));
+      resultsPage.append(form);
+
+      rootEl.append(resultsPage);
+      rootEl.append($('<div id="results-container"></div>'));
+
+      callEdamamApi();
+
+      $('#find').on('submit', function(event){
+         event.preventDefault();
+
+         search = $('#search').val();
+         console.log('results ' + search);
+
+         callEdamamApi();
+      });
+   }
+
+   // callWordsApi();
+   $('#homePageFind').on('submit', function(event){
+      event.preventDefault();
+      loadResultsPage();
+   });
 });
-
-
-
-   var history = document.querySelector("#search")
-   localStorage.setItem("search" ,$("#search") )
-   
-   
-   if (history !== "green-olives") {
-      console.log( localStorage.getItem("search"))
-   }
-   else {
-      console.log("error")
-   }
-
-   
-   
-   
-  
