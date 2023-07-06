@@ -46,16 +46,16 @@ $(function(){
             var labelElement = document.createElement("h3");
             labelElement.textContent = hit.recipe.label;
 
+            var imageElement = document.createElement("img");
+            imageElement.src = hit.recipe.image;
+
             var urlElement = document.createElement("a");
             urlElement.href = hit.recipe.url;
             urlElement.textContent = "View Recipe";
 
-            var imageElement = document.createElement("img");
-            imageElement.src = hit.recipe.image;
-
             recipeElement.appendChild(labelElement);
-            recipeElement.appendChild(urlElement);
             recipeElement.appendChild(imageElement);
+            recipeElement.appendChild(urlElement);
             resultsContainer.appendChild(recipeElement);
          });
       } else {
