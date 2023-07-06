@@ -4,7 +4,7 @@
 ## Overview of our project 
 
 
-When we were brainstorming as a team, we were trying to solve a common problem someone might have. As we were doing so we came up with a couple different ideas, like a video game website and care of plants website. We finally decided to create a recipe finder that would allow the user to find different recipes and help finding the perfect dinner dishes to serve to the user's family. In working as a team we established a workflow, where we would meet up on google team meetings. We also split our work into different branches with our names to keep organized, so that we can push into our develop branch. Our develop branch is where we can test code and merge all of our branches into. Once we have the develop branch work the way we want to then we can push it into our main branch, where it is deployed to git pages. 
+When we were brainstorming as a team, we were trying to solve a common problem someone might have. As we were doing so we came up with a couple different ideas, like a video game website and care of plants website. We finally decided to create a recipe finder that would allow the user to find different recipes and help finding the perfect dinner dishes to serve to the user's family. In working as a team we established a workflow, where we would meet up on google team meetings. We also split our work into different branches with our names to keep organized, so that we can push into our develop branch. Our develop branch is where we can test code and merge all of our branches into. Once we have the develop branch working the way we want, then we can push it into our main branch, where it is deployed to git pages. 
 
 ## Work Roles 
 
@@ -26,13 +26,13 @@ AS A mom, I want to be able to easily find a recipe for dinner, SO that I can sp
 
 * It’s done when I arrive at the home page and I am able to search foods and it’s able to give different food options
 
-*It’s done when the user hits search they are given a list of food options 
+* It’s done when the user hits search they are given a list of food options 
 
-*It’s done when they appear and they are automatically styled on page load 
+* It’s done when they appear and they are automatically styled on page load 
 
-*It’s done when the UI is fully finished and polished 
+* It’s done when the UI is fully finished and polished 
 
-*It’s done when there is autofill for the words when the user starts typing 
+* It’s done when there is autofill for the words when the user starts typing 
 
 
 ## Wire Outline 
