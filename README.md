@@ -40,8 +40,8 @@ AS A mom, I want to be able to easily find a recipe for dinner, SO that I can sp
 
 ## Screenshots
 
-![Screenshot of the homepage](./screenshots/homepage-screenshot.png)
-![Screenshot of the homepage](./screenshots/results-page-screenshot.png)
+![Screenshot of the homepage.](./screenshots/homepage-screenshot.png)
+![Screenshot of the results page.](./screenshots/results-page-screenshot.png)
 
 ## Link to Deployed Application
 
