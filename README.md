@@ -14,9 +14,9 @@ When we were brainstorming as a team, we were trying to solve a common problem s
 
 ## Work Roles 
 
-Jacob Pubwill: HTML Results page/Javascript Food & Words API 
+Jacob Pubwill: HTML Results page/Words API 
 
-Jennifer Arevalo: HTML CSS For Homepage and Results page 
+Jennifer Arevalo: HTML CSS For Homepage and Results page
 
 Roy Hubbard: Javascript Food API
 
@@ -32,21 +32,17 @@ AS A mom, I want to be able to easily find a recipe for dinner, SO that I can sp
 
 * It’s done when the user hits search they are given a list of food options
 
-* It’s done when they appear and they are automatically styled on page load
+* It’s done when the options appear and are automatically styled on page load
 
 * It’s done when the UI is fully finished and polished
 
-* It’s done when there is autofill for the words when the user starts typing
+* It’s done when there is autocomplete for the words when the user starts typing
 
-## Wire Outline 
+## Screenshots
 
-One of the first things we did was create a wire outline together as a group so we could have a visual of what we wanted as a team.
-
-## Screenshots 
-
-
+![Screenshot of the homepage](./screenshots/homepage-screenshot.png)
+![Screenshot of the homepage](./screenshots/results-page-screenshot.png)
 
 ## Link to Deployed Application
 
-https://arevalo00.github.io/recipeFinder/ 
-
+https://arevalo00.github.io/recipeFinder/
