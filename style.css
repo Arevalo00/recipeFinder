@@ -1,55 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:ital,wght@0,100;1,100&display=swap');
 
-div img{
-border-style:dashed;
-    border-color: coral;
-    display: block;
-    border-bottom: 1px;
-}
-
-
-
 .recipe  {
-
     padding: 5px;
-    justify-content: center;
     text-align: center;
     background-color: rgb(226, 221, 221);
-    margin-top: top 50%;
     font-weight: 600;
     color: rgb(49, 48, 48);
-    font-size: 20px;
+    font-size: 25px;
     border-bottom: 50px;
-    border-color: red;
-   
-
+    border-bottom: solid;
+    border-color: rgb(42, 104, 104);
+    padding-bottom: 20px;
 }
 
 h3 {
     padding: 15px;
-    text-align: center;
-    text-align: justify;
-    margin-top: top 50%;
-    font-size: medium;
     text-decoration: underline;
+}
 
-    
+div img{
+    margin: 0% auto;
+    padding: 15px;
 }
 
 a {
     background-color: rgb(68, 182, 182);
     padding: 10px;
     border-radius: 10px;
-    margin-top: top 100%;
     font-size: medium;
     text-decoration: none;
-    position: absolute;
-    position: left 50%;
- 
-   
+    padding-bottom: 10px;
 }
 
 a:hover {
     background-color: rgb(58, 110, 110);
-
 }
