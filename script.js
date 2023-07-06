@@ -77,3 +77,20 @@ $(function(){
 
 });
 
+
+
+   var history = document.querySelector("#search")
+   localStorage.setItem("search" ,$("#search") )
+   
+   
+   if (history !== "green-olives") {
+      console.log( localStorage.getItem("search"))
+   }
+   else {
+      console.log("error")
+   }
+
+   
+   
+   
+  
