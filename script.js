@@ -1,9 +1,9 @@
-var searchInput = document.getElementById("search").value;
+// var searchInput = document.getElementById("search").value;
 var edamamRequestUrl = "https://api.edamam.com/api/recipes/v2?type=public&q=chicken&app_id=f18a3a55&app_key=8bb356bbf9943a27d2c2f82ce7546805";
-var rewind = "return";
 
 $(function(){
-   search = location.search.slice(8, location.search.length);
+   var rootEl = $('#root');
+   var search;
    
    const wordsRequestUrl = 'https://wordsapiv1.p.rapidapi.com/words/food/hasTypes';
    const options = {
@@ -16,19 +16,18 @@ $(function(){
 
    // fetch request for words api
    function callWordsApi() {
-
       fetch(wordsRequestUrl, options)
       .then(function(response){
          return response.json();
       })
       .then(function (data){
          $('#search').autocomplete({
-            source: data.hasTypes,
+            source: data.hasTypes
          });
       });
    }
 
-   function callEdamamApi(search){
+   function callEdamamApi(){
       var edamamRequestUrl = 'https://api.edamam.com/api/recipes/v2?type=public&q=' + search + '&app_id=f18a3a55&app_key=8bb356bbf9943a27d2c2f82ce7546805';
 
       // fetch request for edamam api
@@ -71,7 +70,64 @@ $(function(){
       });
    }
 
-   callWordsApi();
-   $('search-btn').on('click', callEdamamApi(search));
+   function loadHomePage(){
+      $('#resultsPage').remove();
+      $('#results-container').remove();
 
+      var header = $('<h1 class="bg-amber-200 flex justify-center pb-20 pt-20 text-gray-500 text-6xl font-semibold" id="header">Recipe Finder</h1>');
+      var homePage = $('<div class="bg-amber-200 object-center flex justify-center" id="homePage"></div>');
+      var form = $('<form class="bg-amber-200 rounded px-3.5" id="find"></form>');
+      form.append($('<input class="rounded px-3.5 border-slate-600 object-center border-neutral-600" id="search" type="text" name="search" placeholder="Search">'));
+      form.append($('<button class=" rounded px-3.5 bg-cyan-500 hover:bg-cyan-600" type="submit">Find</button>'));
+      homePage.append(form);
+
+      rootEl.append(header);
+      rootEl.append(homePage);
+      rootEl.append($('<div class="bg-amber-200 pb-20 pt-10" id="style"></div>'));
+
+      $('#homePageFind').on('submit', function(event){
+         event.preventDefault();
+   
+         loadResultsPage();
+      });
+   }
+
+   function loadResultsPage(){
+      search = $('#search').val();
+      console.log('home ' + search);
+
+      $('#header').remove();
+      $('#homePage').remove();
+      $('#style').remove();
+
+      var resultsPage = $('<nav class="flex justify-center bg-amber-200 pb-10 pt-10" id="resultsPage"></nav>');
+      var backBtn = $('<a class="rounded px-3.5 bg-cyan-500 hover:bg-cyan-600 mr-6" id="backBtn">Go Back</a>');
+      var form = $('<form class="bg-amber-200 rounded px-3.5" id="find"></form>');
+      form.append($('<input class="rounded px-3.5 border-slate-600 object-center border-neutral-600" id="search" type="text" name="search" placeholder="Search">'));
+      form.append($('<button class="rounded px-3.5 bg-cyan-500 hover:bg-cyan-600" type="submit">Find</button>'));
+      resultsPage.append(backBtn);
+      resultsPage.append(form);
+
+      rootEl.append(resultsPage);
+      rootEl.append($('<div id="results-container"></div>'));
+
+      callEdamamApi();
+
+      $('#backBtn').on('click', loadHomePage);
+      $('#find').on('submit', function(event){
+         event.preventDefault();
+
+         search = $('#search').val();
+         console.log('results ' + search);
+
+         callEdamamApi();
+      });
+
+   }
+
+   // callWordsApi();
+   $('#homePageFind').on('submit', function(event){
+      event.preventDefault();
+      loadResultsPage();
+   });
 });
