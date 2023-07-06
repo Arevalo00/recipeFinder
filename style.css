@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:ital,wght@0,100;1,100&display=swap');
 
+div img{
+border-style:dashed;
+    border-color: coral;
+    display: block;
+    border-bottom: 1px;
+}
+
+
+
 .recipe  {
 
     padding: 5px;
@@ -9,8 +18,10 @@
     margin-top: top 50%;
     font-weight: 600;
     color: rgb(49, 48, 48);
-    
-    font-size: 17px;
+    font-size: 20px;
+    border-bottom: 50px;
+    border-color: red;
+   
 
 }
 
@@ -19,6 +30,9 @@ h3 {
     text-align: center;
     text-align: justify;
     margin-top: top 50%;
+    font-size: medium;
+    text-decoration: underline;
+
     
 }
 
@@ -26,7 +40,12 @@ a {
     background-color: rgb(68, 182, 182);
     padding: 10px;
     border-radius: 10px;
-    margin-top: top 50%;
+    margin-top: top 100%;
+    font-size: medium;
+    text-decoration: none;
+    position: absolute;
+    position: left 50%;
+ 
    
 }
 
