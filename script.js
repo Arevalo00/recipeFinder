@@ -92,6 +92,7 @@ $(function(){
       $('#find').on('submit', function(event){
          event.preventDefault();
          search = $('#search').val();
+         $('#search').val('');
          callEdamamApi();
       });
    }
