@@ -1,5 +1,3 @@
-var edamamRequestUrl = "https://api.edamam.com/api/recipes/v2?type=public&q=chicken&app_id=f18a3a55&app_key=8bb356bbf9943a27d2c2f82ce7546805";
-
 $(function(){
    var rootEl = $('#root');
    var search;
@@ -25,7 +23,7 @@ $(function(){
          });
       });
    }
-
+ 
    function callEdamamApi(){
       var edamamRequestUrl = 'https://api.edamam.com/api/recipes/v2?type=public&q=' + search + '&app_id=f18a3a55&app_key=8bb356bbf9943a27d2c2f82ce7546805';
 
@@ -86,6 +84,7 @@ $(function(){
       rootEl.append(resultsPage);
       rootEl.append($('<div id="results-container"></div>'));
 
+      callWordsApi();
       callEdamamApi();
 
       $('#find').on('submit', function(event){
@@ -98,7 +97,7 @@ $(function(){
       });
    }
 
-   // callWordsApi();
+   callWordsApi();
    $('#homePageFind').on('submit', function(event){
       event.preventDefault();
       loadResultsPage();
